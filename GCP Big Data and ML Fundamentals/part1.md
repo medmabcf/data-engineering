@@ -57,51 +57,63 @@ Google Photos uses a combination of different technologies to automatically stab
 - **Efficiency**: TPUs are faster and more energy-efficient than traditional processing units, making them ideal for tasks like video stabilization.
  
 
-## Storage Service
+## Storage Services 
+Goal of these services is to reduce the time and effort needed to store data.
+Choosing the right option to store and process data often depends on the data type that needs to be stored and the business need 
+
+
+## Cloud for Unstructured data 
+Document, images, audio suited to cloud storage and now for BigQuery also
+
+<img src="../assets/Unstructured_data.png" alt="Description of image" width="200" height="50"/>
+
+
+
+### Cloud Storage 
+
+Cloud Storage is a managed service for storing unstructured data such as documents, images, and audio. This service allows you to store objects in Google Cloud within containers known as buckets. All buckets are associated with a project, and you can group your projects under an organization. Each project, bucket, and object in Google Cloud is a resource, as are things like Compute Engine instances.
+
+The structure is as follows:
+- Project -> Cloud Storage Buckets
+- Bucket -> Objects
+
+You can download and upload objects from and to your bucket. Examples include serving website content, storing data for archival and disaster recovery, and distributing large data objects to end users via direct download. An object is an immutable piece of data consisting of a file of any format.
 Choosing the right option to store and process data often depends on the data type that needs to be stored and the business need.
 
-<img src="../assets/Storage_data.png" alt="Description of image" width="300" height="100"/>
 
-### Data Types
 
-- **Unstructured data**: Document, images, audio suited to cloud storage and now for BigQuery also
+## Cloud for  structured data 
 
-    - <img src="../assets/Unstructured_data.png" alt="Description of image" width="200" height="50"/>
-- **Structured data**
-
-    - <img src="../assets/Structured_data.png" alt="Description of image" width="200" height="50"/>
+<img src="../assets/Structured_data.png" alt="Description of image" width="200" height="50"/>
     
-    - Transactional workloads : stem from online
-    transaction processing systems, used when fast data insert and update are required. This is usually to maintain a system snapshot, they requires standardized queries that impact only a few records
-    - Analytical workload: Stem from online analytical systems used to read the entire datasets. They often require complex queries like aggregations
+Transactional workloads : stem from online
+transaction processing systems, used when fast data insert and update are required. This is usually to maintain a system snapshot, they requires standardized queries that impact only a few records
+Analytical workload: Stem from online analytical systems used to read the entire datasets. They often require complex queries like aggregations
+
 ![Description of image](/assets/Storage.png)
-### Goal of these products is to reduce the time and effort needed to store data 
 
-## Cloud Storage
 
-Cloud Storage is a managed service for storing unstructured data such as documents, images, and audio. Here are some key points:
 
-- **Objects**: You store objects in containers called buckets. An object is an immutable piece of data consisting of a file of any format.
-- **Projects and Buckets**: All buckets are associated with a project, and you can group your projects under an organization. Each project, bucket, and object in Google Cloud is a resource, as are things such as Compute Engine instances.
-- **Operations**: You can download and upload objects from and to your bucket.
-- **Use Cases**: Examples include serving website content, storing data for archival and disaster recovery, and distributing large data objects to end users via direct download.
+### Cloud SQL 
+Works best for local to regional scalability.
+### Cloud Spanner
+Scales a database globally.
+###  Firestore
+A transactional NoSQL, document-oriented database.
+###  BigQuery
+Google’s data warehouse solution, lets you analyze petabyte-scale datasets.
+###  Cloud Bigtable
+Provides a scalable NoSQL solution for analytical workloads. It’s best for real-time, high-throughput applications that require only millisecond latency.
 
-## Databases
 
-Google Cloud offers various database services to cater to different needs:
 
-- **Cloud SQL**: Works best for local to regional scalability.
-- **Cloud Spanner**: Allows you to scale a database globally.
-- **Firestore**: A transactional NoSQL, document-oriented database.
-- **BigQuery**: Google's data warehouse solution that lets you analyze petabyte-scale datasets.
-- **Cloud Bigtable**: Provides a scalable NoSQL solution for analytical workloads. It's best for real-time, high-throughput applications that require only millisecond latency.
+
+
+
+
 
 ## Storage Classes
-
-Google Cloud offers various storage classes to cater to different needs:
-
-- **Standard Storage**: For hot data (frequently accessed) or data stored for only brief periods of time.
-- **Nearline Storage**: For infrequently accessed data (once per month), like data backups and archiving.
-- **Coldline Storage**: For data accessed once every 90 days.
-- **Archive Storage**: For data accessed once a year, suitable for archiving, online backup, and disaster recovery.
-
+- Standard Storage: Hot data (frequently accessed) or data stored for only brief periods of time  
+- Nearline Storage: Infrequently accessed data (once per month) like data backups, archiving
+- Coldline Storage: Once every 90 days
+- Archive Storage: Once a year (archiving, online backup, and disaster recovery)
